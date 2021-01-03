@@ -8,7 +8,7 @@ const Error = () => {
         <div>
             <h1 className="error text-center">ERROR 404: PAGE NOT FOUND</h1>
             <br/>
-            <h1 className="error text-center"><Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link> Back to Ani-chan</h1>
+            <h1 className="error error-push text-center"><Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link> Back to Ani-chan</h1>
         </div>
     )
 }

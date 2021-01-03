@@ -162,6 +162,10 @@ body{
     color: var(--color-white);
 }
 
+.error-push{
+    margin-bottom: 100%;
+}
+
 .footer-main{
    display: flex; 
     flex-direction: column;
