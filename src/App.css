@@ -43,6 +43,10 @@ body{
     background-color: var(--secondary-color);
 }
 
+.container{
+    height: 100%;
+}
+
 .title-logo{
     margin-right: 10px;
 }
@@ -109,11 +113,11 @@ body{
     align-items: center;
 }
 
-.details-header #back-button{
+#back-button{
     margin-right: 10px;
 }
 
-.details-header #back-button:hover{
+#back-button:hover{
     transform: scale(1.3);
     cursor: pointer;
 }
@@ -121,6 +125,7 @@ body{
 .details-characters{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     overflow: auto;
 }
 
@@ -151,4 +156,47 @@ body{
     margin-right: 5px;
     padding: 1px;
     min-height: 100px;
+}
+
+.error{
+    color: var(--color-white);
+}
+
+.footer-main{
+   display: flex; 
+    flex-direction: column;
+    margin-top: 75px;
+    
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: #4db6ac; 
+}
+
+.outro{
+    text-align: center;
+}
+
+.social-icons{
+    align-self: center;
+    margin-top: 10px;
+}
+
+.icons{
+    color: #fff;
+    margin-right: 10px;
+}
+
+#footer-text{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#footer-text a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand{
+    color: white;
 }

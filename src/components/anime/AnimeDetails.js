@@ -5,6 +5,7 @@ import back2 from '../layout/back2.svg';
 import axios from 'axios';
 import '../../App.css'
 import Characters from './Characters';
+import Staff from './Staff';
 
 class AnimeDetails extends Component{
 
@@ -62,6 +63,9 @@ class AnimeDetails extends Component{
                         </div>
                         <div className="details-characters">
                             <Characters input={characterDetails} className=""/>
+                        </div>
+                        <div className="details-characters">
+                            <Staff input={this.state.staffDetails} className=""/>
                         </div>
                     </div>
                 );

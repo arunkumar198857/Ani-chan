@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div>
             <nav className="navbar mb-5">
-            <span className="navbar-brand mb-0 h1 mx-auto" style={{color:'white'}}>
+            <span className="navbar-brand mb-0 h1 mx-auto">
                 <img className="title-logo" src={title_logo} alt="" height="40" width="40"/>
                 Ani-chan
             </span>
