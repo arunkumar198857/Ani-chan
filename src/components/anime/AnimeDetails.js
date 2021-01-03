@@ -4,11 +4,14 @@ import LoadingSpinner from '../layout/LoadingSpinner'
 import back2 from '../layout/back2.svg';
 import axios from 'axios';
 import '../../App.css'
+import Characters from './Characters';
+
 class AnimeDetails extends Component{
 
     state ={
         animeDetails: {},
         characterDetails: {},
+        staffDetails: {},
         episodes: {},
         recommendations: {}
     }
@@ -21,12 +24,14 @@ class AnimeDetails extends Component{
             return axios.get('https://cors-anywhere.herokuapp.com/http://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/characters_staff/'); 
         })
         .then(res => {
-            this.setState({characterDetails: res.data});
+            this.setState({characterDetails: res.data.characters});
+            this.setState({staffDetails: res.data.staff})
             console.log('CHARACTERS: ', this.state.characterDetails);
+            console.log('STAFF: ', this.state.staffDetails);
             return axios.get('https://cors-anywhere.herokuapp.com/http://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/episodes/');
         })
         .then(res => {
-            this.setState({episodes: res.data});
+            this.setState({episodes: res.data.episodes});
             console.log('EPISODES: ', this.state.episodes);
             return axios.get('https://cors-anywhere.herokuapp.com/http://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/recommendations/');
         })
@@ -50,10 +55,13 @@ class AnimeDetails extends Component{
                 return <LoadingSpinner />;
             }else{
                 return(
-                    <div>
-                        <div className="details-title">
-                            <Link to="/"><img src={back2} alt="" height="75" width="75"/></Link>
+                    <div className="main-container">
+                        <div className="details-header">
+                            <Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link>
                             <h1 className="main-page-title">{animeDetails.title}</h1>
+                        </div>
+                        <div className="details-characters">
+                            <Characters input={characterDetails} className=""/>
                         </div>
                     </div>
                 );
