@@ -1,9 +1,10 @@
 import React from 'react'
+import '../../App.css'
 import loading_spinner from './loading_spinner.gif';
 
 const LoadingSpinner = () => {
     return (
-        <div>
+        <div className="error-push2">
             <img 
                 src = {loading_spinner}
                 alt = "Loading..."

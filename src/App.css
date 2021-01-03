@@ -166,6 +166,10 @@ body{
     margin-bottom: 100%;
 }
 
+.error-push2{
+    margin-bottom: 55vh;
+}
+
 .footer-main{
    display: flex; 
     flex-direction: column;
