@@ -1,6 +1,7 @@
 # Ani-chan
 
 This repository contains one of my personal projects "Ani-chan".
+
 Ani-chan is where the fellow otaku's can explore the depths of anime/manga.
 
 # Getting Started with Create React App
