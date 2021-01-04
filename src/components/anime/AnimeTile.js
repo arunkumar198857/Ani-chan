@@ -8,8 +8,8 @@ const AnimeTile = (props) =>{
     const { anime } = props;
 
     return(
-        <div className="col-md-4">
-            <div className="card mb-4 col-12 shadow-sm rounded">
+        <div className="tiles-container">
+            <div className="card mb-3">
                 <div className="card-body">
                     <div className="title-image">
                         <img 

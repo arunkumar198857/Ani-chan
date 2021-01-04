@@ -6,6 +6,7 @@ import axios from 'axios';
 import '../../App.css'
 import Characters from './Characters';
 import Staff from './Staff';
+import Synopsis from './Synopsis';
 
 class AnimeDetails extends Component{
 
@@ -60,6 +61,10 @@ class AnimeDetails extends Component{
                         <div className="details-header">
                             <Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link>
                             <h1 className="main-page-title">{animeDetails.title}</h1>
+                        </div>
+                        <div className="synopsis">
+                            <h3>Synopsis</h3>
+                            <p>{animeDetails.synopsis}</p>
                         </div>
                         <div className="details-characters">
                             <Characters input={characterDetails} className=""/>
