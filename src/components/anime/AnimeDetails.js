@@ -6,7 +6,9 @@ import axios from 'axios';
 import '../../App.css'
 import Characters from './Characters';
 import Staff from './Staff';
-import Synopsis from './Synopsis';
+import Episodes from './Episodes';
+import Recommendations from './Recommendations';
+import MiscDetails from './MiscDetails';
 
 class AnimeDetails extends Component{
 
@@ -38,7 +40,7 @@ class AnimeDetails extends Component{
             return axios.get('https://cors-anywhere.herokuapp.com/http://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/recommendations/');
         })
         .then(res => {
-            this.setState({recommendations: res.data});
+            this.setState({recommendations: res.data.recommendations});
             console.log("RECOMMENDATIONS: ",this.state.recommendations);
         })
         .catch(error => console.log(error))
@@ -60,17 +62,35 @@ class AnimeDetails extends Component{
                     <div className="main-container">
                         <div className="details-header">
                             <Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link>
-                            <h1 className="main-page-title">{animeDetails.title}</h1>
+                            <h1 className="main-page-title">{animeDetails.title} ({animeDetails.title_japanese})</h1>
                         </div>
-                        <div className="synopsis">
-                            <h3>Synopsis</h3>
-                            <p>{animeDetails.synopsis}</p>
+                        <div className="hero">
+                            <div className="synopsis">
+                                <h3>Synopsis</h3>
+                                <p>{animeDetails.synopsis}</p>
+                            </div>
+                            <div className="misc-details">
+                                <h3>Misc details</h3>
+                                <MiscDetails input={animeDetails} />
+                            </div>
                         </div>
-                        <div className="details-characters">
-                            <Characters input={characterDetails} className=""/>
+                        <div className="characters-and-staff">
+                            <div className="details-characters">
+                                <Characters input={characterDetails} />
+                            </div>
+                            <div className="details-characters">
+                                <Staff input={this.state.staffDetails} />
+                            </div>
                         </div>
-                        <div className="details-characters">
-                            <Staff input={this.state.staffDetails} className=""/>
+                        <div className="episodes-and-recommendations">
+                            <div className="episode-container">
+                                <h3>Episodes</h3>
+                                <Episodes input={episodes} />
+                            </div>
+                            <div className="recommend-container">
+                                <h3 className="mb-4">Recommended Anime</h3>
+                                <Recommendations input={recommendations} />
+                            </div>
                         </div>
                     </div>
                 );
