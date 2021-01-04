@@ -21,27 +21,23 @@ class AnimeDetails extends Component{
     }
 
     componentDidMount(){
-
-        // var cors = 'https://cors-anywhere.herokuapp.com/';
-        var base = 'https://api.jikan.moe/v3/anime/';
-
-        axios.get(base+this.props.match.params.mal_id)
+        axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id)
         .then(res => {
             this.setState({animeDetails: res.data});
             console.log("ANIME DETAILS: ", this.state.animeDetails);
-            return axios.get(base+this.props.match.params.mal_id+'/characters_staff/'); 
+            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/characters_staff/'); 
         })
         .then(res => {
             this.setState({characterDetails: res.data.characters});
             this.setState({staffDetails: res.data.staff})
             console.log('CHARACTERS: ', this.state.characterDetails);
             console.log('STAFF: ', this.state.staffDetails);
-            return axios.get(base+this.props.match.params.mal_id+'/episodes/');
+            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/episodes/');
         })
         .then(res => {
             this.setState({episodes: res.data.episodes});
             console.log('EPISODES: ', this.state.episodes);
-            return axios.get(base+this.props.match.params.mal_id+'/recommendations/');
+            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id+'/recommendations/');
         })
         .then(res => {
             this.setState({recommendations: res.data.recommendations});
