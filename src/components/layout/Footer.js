@@ -15,7 +15,7 @@ const Footer = () => {
                 <a target="_blank" rel="noreferrer" href="https://github.com/arunkumar198857"><i className="fab fa-github fa-2x icons"></i></a>
                 <a target="_blank" rel="noreferrer" href="https://www.instagram.com/charmander_og/"><i className="fab fa-instagram fa-2x icons"></i></a>
             </div>
-            <span className="navbar-brand mb-0 h1 mx-auto mt-1">
+            <span className="navbar-brand footer-text mb-0 h1 mx-auto mt-1">
                 <img className="title-logo" src={title_logo} alt="" height="40" width="40"/>
                 Ani-chan
             </span>
