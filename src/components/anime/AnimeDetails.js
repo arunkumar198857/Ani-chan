@@ -22,7 +22,7 @@ class AnimeDetails extends Component{
 
     componentDidMount(){
 
-        var cors = 'https://cors-anywhere.herokuapp.com/';
+        // var cors = 'https://cors-anywhere.herokuapp.com/';
         var base = 'http://api.jikan.moe/v3/anime/';
 
         axios.get(base+this.props.match.params.mal_id)
