@@ -23,9 +23,9 @@ const RecommendTile = ({anime}) => {
                         </ul>
                     </div>
                 </div>
-                <Link to={'/homepage/anime/'+anime.mal_id} className="explore-button btn">
+                {/* <Link to={'/homepage/anime/'+anime.mal_id} className="explore-button btn">
                         <i className="fas fa-chevron-right"></i> Expore more
-                </Link>
+                </Link> */}
             </div>
         </div>
     )

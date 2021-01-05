@@ -1,9 +1,10 @@
 :root{
     --primary-color: #757575;
     --secondary-color: #424242;
-    --color-white: #fff;
+    --text-primary: #fff;
 }
 
+/* For alignment of homepage divs*/
 .row {
     justify-content: center;
 }
@@ -39,6 +40,7 @@
     margin: 0;
 }
 
+/* Theme */
 body{
     background-color: var(--primary-color);
 }
@@ -49,6 +51,10 @@ body{
 
 .container{
     height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100%;
+    overflow: auto;
 }
 
 .title-logo{
@@ -56,52 +62,44 @@ body{
 }
 
 .main-page-title{
-    color: white;
-}
-
-.container{
-    box-sizing: border-box;
-    position: relative;
-    min-height: 100%;
-    overflow: auto;
+    color: var(--text-primary);
 }
 
 .top-header, .anime-title{
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
+/* Search */
 .btn{
-    color: white;
+    color: var(--text-primary);
     background-color: var(--secondary-color);
     width: 100%;
 }
 
 .btn:hover{
-    color: white;
+    color: var(--text-primary);
     transition: 0.1s ease-in;
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 
 .card{
     background-color: var(--secondary-color);
     overflow: hidden;
-    transition: 0.1s ease-in;
+    transition: 0.2s ease-in;
 }
 
 .card-body{
     display: flex;
-    position: relative;
 }
+
+/* Index */
+/* Index page tiles divs*/
 
 .tiles-container{
     display: flex;
     flex-direction: column;
     max-width: 440px;
-    min-width: 400px;
-}
-
-.title-image{
-    margin-bottom: 10px;
+    min-width: 380px;
 }
 
 .anime-title{
@@ -110,7 +108,7 @@ body{
 }
 
 .card-text{
-    color: #fff;
+    color: var(--text-primary);
     list-style: none;
     font-size: 0.8rem;
 }
@@ -118,6 +116,8 @@ body{
 .card-text li{
     margin: 1px 0;
 }
+
+/* Anime Details Page */
 
 .details-header{
     display: flex;
@@ -137,6 +137,8 @@ body{
     overflow: hidden;
 }
 
+/*Synopsis and Misc*/
+
 .hero{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -146,7 +148,7 @@ body{
 .synopsis{
     margin-left: 25px;
     margin-top: 20px;
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
 .misc-details{
@@ -154,7 +156,7 @@ body{
 }
 
 .misc-details a{
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
 .characters-and-staff{
@@ -163,27 +165,20 @@ body{
     gap: 100px;
 }
 
+/*Episodes and recommendations*/
+
+/* Episodes */
+
 .episodes-and-recommendations{
     margin-top: 50px;
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 100px;
-    color: var(--color-white);
+    color: var(--text-primary);
 }
-
-@media screen and (max-width: 768px){
-    .characters-and-staff,
-    .episodes-and-recommendations,
-    .hero{
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-
 
 .episodes-container{
-    color: var(--color-white);
+    color: var(--text-primary);
     margin-top: 20px;
     font-size: 12px;
 }
@@ -191,12 +186,13 @@ body{
 .episode-card{
     border: 1px solid #bbb;
     border-radius: 5px;
+    padding-top: 5px;
     padding-left: 10px;
 }
 
 .episode-card a{
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
 .bg-episode{
@@ -205,8 +201,10 @@ body{
 
 .title-info a{
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--text-primary);
 }
+
+/* Characters */
 
 .details-characters{
     display: flex;
@@ -222,25 +220,31 @@ body{
 }
 
 .characters-heading{
-    color: var(--color-white);
+    color: var(--text-primary);
     margin-top: 20px;
     margin-left: 20px;
 }
 
+/* Staff */
+
 .staff-details{
-    max-height: 220px;
+    max-height: 210px;
 }
+
+/*Explore button */
 
 .explore-button{
     background: var(--primary-color);
     width: 100%;
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
 .explore-button:hover{
     transform: scale(1.02);
-    color: var(--color-white);
+    color: var(--text-primary);
 }
+
+/* Card */
 
 .card{
     border: 1px solid #bbb;
@@ -249,14 +253,19 @@ body{
     min-height: 100px;  
 }
 
+/* Misc Details*/
+
 .misc-details{
     padding: 10px;
     border-radius: 10px;
-    color: var(--color-white);
+    font-size: 0.8rem;
+    color: var(--text-primary);
 }
 
+/* DEFAULT ERROR PAGE */
+
 .error{
-    color: var(--color-white);
+    color: var(--text-primary);
 }
 
 .error-push{
@@ -266,6 +275,9 @@ body{
 .error-push2{
     margin-bottom: 55vh;
 }
+
+
+/* FOOTER */
 
 .footer-main{
    display: flex; 
@@ -298,13 +310,27 @@ body{
 
 #footer-text a{
     text-decoration: none;
-    color: white;
+    color: var(--text-primary);
 }
 
 .navbar-brand{
-    color: white;
+    color: var(--text-primary);
 }
 
-.footer-text{
-    margin-right: 20px;
+/* Media Queries */
+
+@media screen and (max-width: 768px){
+    .characters-and-staff,
+    .episodes-and-recommendations,
+    .hero{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media screen and(max-width: 400px){
+    .explore-button{
+        background: var(--primary-color);
+        color: var(--text-primary);
+    }
 }

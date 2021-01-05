@@ -5,7 +5,7 @@ const Recommendations = ({input}) => {
     return (
        <div className="recommend-container">
             {
-                input.slice(0,12).map(item => (
+                input.slice(0,15).map(item => (
                     <RecommendTile key={item.mal_id} anime={item} />
                 ))
             }
