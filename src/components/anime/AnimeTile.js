@@ -31,7 +31,7 @@ const AnimeTile = (props) =>{
                     </div>
                 </div>
                 <Link to={'homepage/anime/'+anime.mal_id} className="explore-button btn btn-block">
-                        <i className="fas fa-chevron-right"></i> Expore more
+                        <i className="fas fa-chevron-right"></i> Explore more
                 </Link>
             </div>
         </div>
