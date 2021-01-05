@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundParallax from './components/layout/BackgroundParallax';
 import Navbar from './components/layout/Navbar';
 import Index from './components/layout/Index';
 import AnimeDetails from './components/anime/AnimeDetails'
@@ -14,6 +15,7 @@ function App() {
     <Provider>
       <Router>
         <React.Fragment>
+          <BackgroundParallax />
           <Navbar />
           <div className="container">
             <Switch>
