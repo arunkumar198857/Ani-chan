@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Consumer} from '../../context';
 import AnimeTile from './AnimeTile';
 import '../../App.css'
+import LoadingSpinner from '../layout/LoadingSpinner';
 
 class AnimeIndex extends Component {
     render() {
@@ -10,7 +11,7 @@ class AnimeIndex extends Component {
                 {value => {
                     const { anime_list, heading } = value;
                     if (anime_list === undefined || anime_list.length === 0) {
-                        return <h1>LOADING</h1>;
+                        return <LoadingSpinner />;
                     }else{
                         return (
                             <React.Fragment>

@@ -852,6 +852,17 @@ body{
     margin-bottom: 55vh;
 }
 
+/* Review Container */
+.review-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.review-content{
+    font-size: 0.9rem;
+}
+
 
 /* FOOTER */
 
