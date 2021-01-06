@@ -75,17 +75,17 @@ class AnimeDetails extends Component{
                             <Link to="/"><img src={back2} alt="" height="75" width="75" id="back-button"/></Link>
                             <h1 className="main-page-title">{animeDetails.title} ({animeDetails.title_japanese})</h1>
                         </div>
-                        <div className="hero mt-4">
+                        <div className="hero mt-5">
                             <div className="synopsis">
                                 <h3>Synopsis</h3>
-                                <p>{animeDetails.synopsis}</p>
+                                <p className="synopsis-text">{animeDetails.synopsis}</p>
                             </div>
                             <div className="misc-details">
                                 <h3>Misc details</h3>
                                 <MiscDetails input={animeDetails} />
                             </div>
                         </div>
-                        <div className="characters-and-staff mt-4">
+                        <div className="characters-and-staff mt-5">
                             <div className="details-characters">
                                 <Characters input={characterDetails} />
                             </div>
@@ -103,7 +103,7 @@ class AnimeDetails extends Component{
                                 <Recommendations input={recommendations} />
                             </div>
                         </div>
-                        <div className="reviews">
+                        <div className="reviews mt-5">
                             <Reviews input={reviews}/>
                         </div>
                     </div>

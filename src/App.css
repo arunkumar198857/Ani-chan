@@ -723,12 +723,13 @@ body{
 
 .synopsis{
     margin-left: 25px;
+    margin-right: 25px;
     margin-top: 20px;
     color: var(--text-primary);
 }
 
-.misc-details{
-    margin-top: 20px;
+.synopsis-text{
+    text-align: justify;
 }
 
 .misc-details a{
