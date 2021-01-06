@@ -23,6 +23,7 @@ class AnimeDetails extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0);
         axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v3/anime/'+this.props.match.params.mal_id)
         .then(res => {
             this.setState({animeDetails: res.data});
