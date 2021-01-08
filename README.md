@@ -4,6 +4,8 @@ This repository contains one of my personal projects "Ani-chan".
 
 Ani-chan is where the fellow otaku's can explore the depths of anime/manga.
 
+Made using React.js, Bootstrap and Jikan API.
+
 Deployed @ https://arunkumar-ani-chan.netlify.app/
 
 ![GitHub contributors](https://img.shields.io/github/contributors/arunkumar198857/Ani-chan)
