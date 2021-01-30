@@ -24,8 +24,8 @@ export class Provider extends Component {
         dispatch: action => this.setState(state => reducer(state, action))
     };
 
-    componentDidMount(){
-        Axios.get('https://api.jikan.moe/v3/top/anime/1/bypopularity')
+    async componentDidMount(){
+        await Axios.get('https://api.jikan.moe/v3/top/anime/1/bypopularity')
         .then(res => {
             this.setState({anime_list: res.data.top});  
         })

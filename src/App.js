@@ -10,13 +10,12 @@ import Error from './components/layout/Error'
 import './App.css';
 
 
-function App() {
+const App = () => {
   return (
     <Provider>
-      <Router>
-        <React.Fragment>
-          <BackgroundParallax />
-          <Navbar />
+      <Router> 
+        <BackgroundParallax />
+        <Navbar />
           <div className="container">
             <Switch>
               <Route exact path="/" component={Index}/>
@@ -24,8 +23,7 @@ function App() {
               <Route path="*" component={Error}/>
             </Switch>
           </div>
-          <Footer />
-        </React.Fragment>
+        <Footer />
       </Router>
     </Provider>
   );
