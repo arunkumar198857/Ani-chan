@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
 import '../../App.css'
 
-const AnimeTile = (props) =>{
+const AnimeTile = (props) => {
 
     const { anime } = props;
-
     return(
         <div className="tiles-container">
             <div className="card mb-3">

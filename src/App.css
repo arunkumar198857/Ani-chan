@@ -237,7 +237,7 @@ body{
 #stars::after{
     content: '';
     position: absolute;
-    top: 4000px;
+    top: 100vh;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -482,7 +482,7 @@ body{
 #stars2::after{
     content: '';
     position: absolute;
-    top: 4000px;
+    top: 100vh;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -575,7 +575,7 @@ body{
 #stars3:after{
     content: '';
     position: absolute;
-    top: 4000px;
+    top: 100vh;
     height: 3px;
     width: 3px;
     background: transparent;
@@ -614,7 +614,7 @@ body{
         transform: translateY(0px);
     }
     to{
-        transform: translateY(-4000px);
+        transform: translateY(-100vh);
     }
 }
 
