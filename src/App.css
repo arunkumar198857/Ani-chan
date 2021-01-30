@@ -914,4 +914,13 @@ body{
         display: flex;
         flex-direction: column;
     }
+
+    .synopsis-text,
+    .review-content{
+        font-size: 0.85rem;
+    }
+
+    .card-text{
+        font-size-adjust: 0.8rem;
+    }
 }
