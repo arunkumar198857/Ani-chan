@@ -761,19 +761,16 @@ body{
 }
 
 .episode-card{
-    border: 1px solid var(--border-color);
+    box-shadow: 0 0 1px 0 #fff;
     border-radius: 5px;
-    padding-top: 5px;
-    padding-left: 10px;
+    padding: 10px 10px;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
 }
 
 .episode-card a{
     text-decoration: none;
     color: var(--text-primary);
-}
-
-.bg-episode{
-    background-color: #9E9E9E;
 }
 
 .title-info a{
@@ -789,6 +786,11 @@ body{
     flex-wrap: wrap;
     overflow-x: scroll;
     overflow-y: hidden;
+    font-size: 0.8rem;
+}
+
+.character-tiles-container p{
+    margin-top: 5px;
 }
 
 .details-characters-secondary{
@@ -802,10 +804,24 @@ body{
     margin-left: 20px;
 }
 
+.font-white{
+    color: white;
+}
+
 /* Staff */
 
 .staff-details{
-    max-height: 210px;
+    max-height: 200px;
+}
+
+.staff-details-img-container{
+    display: flex;
+    justify-content: center;
+}
+
+.staff-details p{
+    margin-top: 5px;
+    font-size: 0.8rem;
 }
 
 /*Explore button */
@@ -824,10 +840,12 @@ body{
 /* Card */
 
 .card{
-    border: 1px solid var(--border-color);
+    box-shadow: 0 0 1px 0 #fff;
     margin-right: 5px;
     padding: 1px;
     min-height: 100px;  
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
 }
 
 /* Misc Details*/
