@@ -15,3 +15,42 @@ Deployed @ https://arunkumar-ani-chan.netlify.app/
 ![GitHub repo size](https://img.shields.io/github/repo-size/arunkumar198857/Ani-chan)
 ![Lines of code](https://img.shields.io/tokei/lines/github/arunkumar198857/Ani-chan)
 
+
+
+## 1. Desktop View
+
+### 1. Header
+![](screenshots/Homepage.jpg)
+
+
+### 2. Footer
+![](screenshots/HomepageFooter.jpg)
+
+
+
+### 3. Anime Page
+![](screenshots/AnimePage1.jpg)
+
+
+
+### 3. Anime Page - 2
+![](screenshots/AnimePage2.jpg)
+
+
+
+### 3. Anime Page - 4
+![](screenshots/AnimePageFooter.jpg)
+
+
+
+
+## 2. Mobile/Tablet View
+
+### 1. 
+<img src="https://github.com/arunkumar198857/Ani-chan/blob/master/screenshots/Tablet1.png" width="384" height="512">
+
+
+
+### 2. 
+
+<img src="https://github.com/arunkumar198857/Ani-chan/blob/master/screenshots/Tablet2.png" width="384" height="512">
