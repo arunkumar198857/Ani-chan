@@ -11,7 +11,7 @@ class Search extends Component {
     findAnime = (dispatch, e) => {
         e.preventDefault();
         let str = decodeURIComponent(this.state.animeTitle.trim());
-        Axios.get('https://api.jikan.moe/v3/search/anime?q='+str+'&page=1')
+        Axios.get('https://api.jikan.moe/v4/search/anime?q='+str+'&page=1')
         .then(res => {
             console.log(res);
             dispatch({
