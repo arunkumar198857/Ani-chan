@@ -9,7 +9,7 @@ const Reviews = ({input}) => {
             <div className="review-container card-body">
                 <React.Fragment>
                 {
-                    input.reviews.slice(0,4).map( item => (
+                    input?.slice(0,4)?.map( (item) => (
                         <ReviewTiles key={item.mal_id} review={item} />
                     ))
                 }

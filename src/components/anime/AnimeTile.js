@@ -14,7 +14,7 @@ const AnimeTile = (props) => {
                         <img 
                             height="200"
                             width="150"
-                            src={anime.image_url} 
+                            src={anime.images.jpg.image_url} 
                             alt=""
                         />
                     </div>

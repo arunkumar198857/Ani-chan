@@ -21,36 +21,54 @@ class AnimeDetails extends Component{
         reviews: {}
     }
 
+    async wait(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+
+    batchWiseApiCall = async (apiList = []) => {
+        const batchSize = 3;
+        let startIndex = 0;
+        let endIndex = apiList.length;
+        let res = [];
+        let currentBatch = [];
+
+        while(startIndex < endIndex){
+            currentBatch = apiList.slice(startIndex, endIndex - startIndex > batchSize ? batchSize : endIndex); 
+            startIndex = startIndex + (currentBatch.length < batchSize ? currentBatch.length : batchSize);
+
+            currentBatch = (currentBatch).map((apiEndpoint) => axios.get(apiEndpoint));
+
+            await Promise.all(currentBatch).then(async (resArr) => {
+                await this.wait(2000);
+                res.push(...resArr);
+            });
+        }
+
+        return res;
+    }
+
+    parallelApiCalls = async () => {
+        const apiList = [
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/full',
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/characters',
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/staff',
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/episodes',
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/recommendations',
+            'https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/reviews',
+        ];
+
+        const [fullRes, charactersRes, staffRes, episodesRes, recommendationsRes, reviewsRes] = await this.batchWiseApiCall(apiList);
+        this.setState({animeDetails: fullRes.data.data});
+        this.setState({characterDetails: charactersRes.data.data});
+        this.setState({staffDetails: staffRes.data.data});
+        this.setState({episodes: episodesRes.data.data});
+        this.setState({recommendations: recommendationsRes.data.recommendations});
+        this.setState({reviews: reviewsRes.data.data});
+    }
+
     componentDidMount(){
         window.scrollTo(0, 0);
-        axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id)
-        .then(res => {
-            this.setState({animeDetails: res.data});
-            // console.log("ANIME DETAILS: ", this.state.animeDetails);
-            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/characters_staff/'); 
-        })
-        .then(res => {
-            this.setState({characterDetails: res.data.characters});
-            this.setState({staffDetails: res.data.staff})
-            // console.log('CHARACTERS: ', this.state.characterDetails);
-            // console.log('STAFF: ', this.state.staffDetails);
-            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/episodes/');
-        })
-        .then(res => {
-            this.setState({episodes: res.data.episodes});
-            // console.log('EPISODES: ', this.state.episodes);
-            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/recommendations/');
-        })
-        .then(res => {
-            this.setState({recommendations: res.data.recommendations});
-            // console.log("RECOMMENDATIONS: ",this.state.recommendations);
-            return axios.get('https://cors-anywhere.herokuapp.com/https://api.jikan.moe/v4/anime/'+this.props.match.params.mal_id+'/reviews/');
-        })
-        .then(res => {
-            this.setState({reviews: res.data});
-            // console.log("REVIEWS: ",this.state.reviews);
-        })
-        .catch(error => console.log(error))
+        this.parallelApiCalls();
     }
 
     render(){

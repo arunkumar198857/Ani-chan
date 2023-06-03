@@ -6,21 +6,14 @@ const ReviewTiles = ({review}) => {
         <div className="review-container">
             <div className="card p-4">
                 <p className="review-content text-left text-light">
-                    <strong>Username: </strong>{review.reviewer.username} <a href={review.reviewer.url} className="text-light">(profile)</a>
+                    <strong>Username: </strong>{review.user.username} <a href={review.user.url} className="text-light">(profile)</a>
                     <br/>
-                    <strong>Episodes seen: </strong>{review.reviewer.episodes_seen}
+                    <strong>Episodes seen: </strong>{review.episodes_watched}
                     <br/>
                     <strong>Date: </strong>{review.date}
                     <br/>
-                    <strong>Scores(out of 10): </strong>
-                    animation: {review.reviewer.scores.animation}
-                    , character: {review.reviewer.scores.character}
-                    , enjoyment: {review.reviewer.scores.enjoyment}
-                    , overall: {review.reviewer.scores.overall}
-                    , sound: {review.reviewer.scores.sound}
-                    , story: {review.reviewer.scores.story}
-                    <br/><br/>
-                    {review.content}   
+                    <strong>Scores(out of 10): {review.score} </strong>
+                    {review.review}   
                     <br/>
                 </p>
             </div>

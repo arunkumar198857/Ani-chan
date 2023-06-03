@@ -6,7 +6,7 @@ const Episodes = ({input}) => {
     return (
         <div className="episodes-container">
             {
-                input.map(item => (
+                input?.slice(0, 24)?.map(item => (
                     <Episode key={item.episode_id} episode={item} />
                 ))
             }
